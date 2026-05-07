@@ -52,7 +52,7 @@ app.use('/api/team', teamRouter);
 // app.use('/api/team',        teamRouter)
 app.get('/api/health', (_, res) => res.json({ ok: true }))
 // React fallback for refresh/deep links
-app.get('*', (req, res, next) => {
+app.get('/{*path}', (req, res, next) => {
  if (req.path.startsWith('/api')) return next();
  res.sendFile(path.join(clientDir, 'index.html'));
 });

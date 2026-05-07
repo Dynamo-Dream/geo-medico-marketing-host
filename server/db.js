@@ -6,5 +6,5 @@ export default new Pool({
   port: parseInt(process.env.DB_PORT) || 5432,
   database: process.env.DB_NAME || 'geo_medico',
   user: process.env.DB_USER || 'postgres',
-  password: process.env.DB_PASSWORD,
+  password: process.env.DB_PASSWORD || '@Cows123',
 })
