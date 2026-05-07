@@ -1,0 +1,74 @@
+.hero {
+  position: relative;
+  padding: 72px 0 64px;
+  color: white;
+  overflow: hidden;
+}
+.glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.left { display: flex; flex-direction: column; gap: 20px; }
+.badgeWrap { display: flex; }
+
+.heading {
+  font-size: clamp(30px, 4.5vw, 52px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+.sub {
+  color: rgba(255,255,255,.55);
+  font-size: 0.6em;
+  font-weight: 600;
+}
+.desc {
+  font-size: 16px;
+  color: rgba(255,255,255,.72);
+  max-width: 540px;
+  line-height: 1.75;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tag {
+  padding: 5px 14px;
+  border-radius: 100px;
+  border: 1px solid;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(255,255,255,.06);
+}
+.actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.right { display: flex; justify-content: center; align-items: center; }
+.emojiCircle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.06);
+  border: 2px solid rgba(255,255,255,.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(12px);
+  animation: float 5s ease-in-out infinite;
+}
+.bigEmoji { font-size: 72px; filter: drop-shadow(0 8px 24px rgba(0,0,0,.4)); }
+
+@media (max-width: 768px) {
+  .right { display: none; }
+  .inner { grid-template-columns: 1fr; }
+  .hero { padding: 56px 0 48px; }
+}

@@ -1,0 +1,312 @@
+/* Two-color palette: Blue #0a6ebd + Teal #00b894 with their shades */
+
+/* ── Section wrapper ──────────────────────────────────────────────────────── */
+.sectionWrap {
+  padding: 72px 32px;
+  background: #ffffff;
+}
+
+.altBg {
+  background: #f0f8ff;
+}
+
+.regBg {
+  background: linear-gradient(135deg, #e8f4fd 0%, #e8fdf8 100%);
+}
+
+.sectionInner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Section heading ──────────────────────────────────────────────────────── */
+.sectionHead {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  background: linear-gradient(120deg, #0a6ebd, #00b894);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sectionBar {
+  width: 52px;
+  height: 4px;
+  border-radius: 2px;
+  margin: 0 auto 14px;
+  background: linear-gradient(90deg, #0a6ebd, #00b894) !important;
+}
+
+.sectionSub {
+  font-size: 14.5px;
+  color: #64748b;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── About layout ─────────────────────────────────────────────────────────── */
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.aboutText h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0a6ebd;
+  margin-bottom: 14px;
+}
+
+.aboutText p {
+  color: #475569;
+  line-height: 1.85;
+  margin-bottom: 12px;
+  font-size: 14.5px;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: white;
+  border-left: 4px solid #00b894;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1e293b;
+  box-shadow: 0 2px 8px rgba(0,184,148,.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.featureItem:nth-child(odd) {
+  border-left-color: #0a6ebd;
+  box-shadow: 0 2px 8px rgba(10,110,189,.1);
+}
+
+.featureItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(10,110,189,.15);
+}
+
+.featureIcon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+/* ── Cards grid ───────────────────────────────────────────────────────────── */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ── Entity card ──────────────────────────────────────────────────────────── */
+.eCard {
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #e2edf7;
+  box-shadow: 0 2px 12px rgba(10,110,189,.06);
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.eCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(10,110,189,.14);
+}
+
+.eCardImg {
+  width: 100%;
+  height: 156px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eCardEmoji {
+  font-size: 3.4rem;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.25));
+}
+
+.eCardBody {
+  padding: 18px 20px 20px;
+}
+
+.eCardName {
+  font-size: 15px;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.eCardDesig {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #0a6ebd;
+}
+
+.eCardMeta {
+  font-size: 12.5px;
+  color: #64748b;
+  line-height: 1.55;
+  margin-bottom: 4px;
+}
+
+.eBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 12px;
+}
+
+.eBadge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  background: #e8f4fd;
+  color: #0056a0;
+}
+
+.eBadgeGreen {
+  background: #e8fdf8;
+  color: #00806a;
+}
+
+.eBadgePurple {
+  background: #ede9fe;
+  color: #4c1d95;
+}
+
+/* ── Registration ─────────────────────────────────────────────────────────── */
+.regCard {
+  background: white;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 16px;
+  padding: 40px 44px;
+  max-width: 540px;
+  margin: 0 auto;
+  box-shadow: 0 8px 40px rgba(10,110,189,.14), 0 0 0 2px rgba(10,110,189,.15);
+}
+
+.regTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+  background: linear-gradient(120deg, #0a6ebd, #00b894);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.successMsg {
+  background: linear-gradient(135deg, #dcfce7, #d1fae5);
+  color: #166534;
+  border: 1px solid #86efac;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.regForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.formGroup label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 10px 13px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 9px;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  color: #1e293b;
+  background: white;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  border-color: #0a6ebd;
+  box-shadow: 0 0 0 3px rgba(10,110,189,.12);
+}
+
+.formGroup textarea {
+  resize: vertical;
+}
+
+.regBtn {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #0a6ebd, #00b894);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+  margin-top: 4px;
+  box-shadow: 0 4px 16px rgba(10,110,189,.28);
+}
+
+.regBtn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 22px rgba(10,110,189,.35);
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .cardsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .sectionWrap  { padding: 48px 16px; }
+  .aboutGrid    { grid-template-columns: 1fr; gap: 32px; }
+  .cardsGrid    { grid-template-columns: 1fr; }
+  .featureGrid  { grid-template-columns: 1fr; }
+  .regCard      { padding: 24px 20px; }
+  .sectionTitle { font-size: 1.5rem; }
+}

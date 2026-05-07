@@ -1,0 +1,221 @@
+.page {
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+}
+
+/* ── Hero ─────────────────────────────────────────────────────────────── */
+.hero {
+  text-align: center;
+  padding: 80px 24px 56px;
+  background: #ffffff;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.heroSub {
+  font-size: 16px;
+  color: #64748b;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Info cards ───────────────────────────────────────────────────────── */
+.cardsSection {
+  padding: 0 24px 64px;
+  background: #ffffff;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 28px;
+  background: #f8fafc;
+  border: 1px solid #e8f0f7;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(10,110,189,.06);
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(10,110,189,.12);
+}
+
+.cardIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #f0f7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0a6ebd;
+  margin-bottom: 20px;
+}
+
+.cardTitle {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.cardValue {
+  font-size: 14.5px;
+  color: #0a6ebd;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* ── Form section ─────────────────────────────────────────────────────── */
+.formSection {
+  background: linear-gradient(135deg, #0c1c3a 0%, #0a3d6b 50%, #00806a22 100%);
+  padding: 80px 24px;
+}
+
+.formCard {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 48px 52px;
+  max-width: 720px;
+  margin: 0 auto;
+  box-shadow: 0 24px 80px rgba(0,0,0,.25);
+}
+
+.formTitle {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.formSub {
+  font-size: 14px;
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-size: 14px;
+  color: #1e293b;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: #0a6ebd;
+  box-shadow: 0 0 0 3px rgba(10,110,189,.12);
+}
+
+.input::placeholder { color: #94a3b8; }
+
+.textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+.submitBtn {
+  padding: 14px 32px;
+  border-radius: 12px;
+  background: #0f172a;
+  color: white;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  width: fit-content;
+  min-width: 140px;
+}
+
+.submitBtn:hover {
+  background: #0a6ebd;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(10,110,189,.3);
+}
+
+.submitBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.successMsg {
+  background: #dcfce7;
+  border: 1px solid #86efac;
+  color: #166534;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.errorMsg {
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #b91c1c;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .cardsGrid    { grid-template-columns: 1fr; max-width: 400px; }
+  .formCard     { padding: 32px 20px; }
+  .formRow      { grid-template-columns: 1fr; }
+  .heroTitle    { font-size: 1.8rem; }
+}

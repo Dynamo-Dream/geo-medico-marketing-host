@@ -1,0 +1,112 @@
+.section {
+  padding: 64px 0;
+  background: linear-gradient(180deg, #0a1628 0%, var(--dark) 100%);
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.heading {
+  font-size: 30px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 10px;
+  letter-spacing: -0.3px;
+}
+
+.sub {
+  font-size: 15px;
+  color: rgba(255,255,255,.45);
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 28px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(10,110,189,.35);
+  box-shadow: 0 16px 40px rgba(0,0,0,.3);
+}
+
+.quote {
+  font-size: 56px;
+  line-height: 0.6;
+  color: rgba(10,110,189,.5);
+  font-family: Georgia, serif;
+  font-weight: 900;
+}
+
+.content {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,.75);
+  margin: 0;
+  flex: 1;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.starFilled { color: #f59e0b; font-size: 16px; }
+.starEmpty  { color: rgba(255,255,255,.2); font-size: 16px; }
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0a6ebd, #00e5cc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.role {
+  font-size: 12px;
+  color: rgba(255,255,255,.45);
+  margin-top: 2px;
+}
+
+@media (max-width: 1024px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px)  { .grid { grid-template-columns: 1fr; } .heading { font-size: 24px; } }

@@ -1,0 +1,304 @@
+.hero {
+  position: relative;
+  min-height: 90vh;
+  background: var(--dark);
+  color: white;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 80px 0 60px;
+}
+.bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 60%, rgba(10,110,189,.35) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 30%, rgba(0,184,148,.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 80%, rgba(108,92,231,.15) 0%, transparent 45%);
+}
+.bgGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.hero > .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.content { display: flex; flex-direction: column; gap: 24px; }
+.badge { display: flex; }
+
+.heading {
+  font-size: clamp(36px, 5.5vw, 62px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+.highlight {
+  background: linear-gradient(135deg, #4fc3f7, #00e5cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.sub { color: rgba(255,255,255,.5); font-size: 0.65em; font-weight: 600; }
+
+.desc {
+  font-size: 17px;
+  line-height: 1.75;
+  color: rgba(255,255,255,.75);
+  max-width: 520px;
+}
+
+.actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.quickLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+.quickBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 100px;
+  border: 1px solid rgba(255,255,255,.15);
+  background: rgba(255,255,255,.07);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  backdrop-filter: blur(8px);
+}
+.quickBtn:hover {
+  background: var(--ql-color, var(--primary));
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.3);
+}
+.quickIcon { font-size: 16px; }
+
+/* Phone mockup */
+.visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.phoneFrame {
+  position: relative;
+  animation: float 5s ease-in-out infinite;
+}
+.phoneMock {
+  width: 300px;
+  height: 580px;
+  background: #0d1726;
+  border-radius: 40px;
+  border: 3px solid rgba(255,255,255,.12);
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.04);
+  display: flex;
+  flex-direction: column;
+}
+.phoneHeader { padding: 12px 16px 0; }
+.phoneStatus {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: rgba(255,255,255,.5);
+  margin-bottom: 10px;
+}
+.appBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,.05);
+  border-radius: 10px;
+  padding: 8px 12px;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  position: relative;
+}
+.appLogo {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 900;
+}
+.notifDot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  animation: pulse-glow 2s infinite;
+}
+
+.mapArea {
+  flex: 1;
+  position: relative;
+  background: #0a1628;
+  margin: 10px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.mapGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.mapPin {
+  position: absolute;
+  font-size: 20px;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.6));
+}
+.pinHospital { top: 25%; left: 30%; }
+.pinDoctor { top: 45%; right: 25%; }
+.pinPharmacy { bottom: 30%; left: 20%; }
+.pinAmbulance { bottom: 20%; right: 30%; }
+.userPin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,.8));
+  z-index: 2;
+}
+.radar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid rgba(10,110,189,.4);
+  animation: radarPulse 2s ease-out infinite;
+}
+@keyframes radarPulse {
+  0% { width: 20px; height: 20px; opacity: 1; margin: -10px; }
+  100% { width: 100px; height: 100px; opacity: 0; margin: -50px; }
+}
+
+.phoneCards {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px 10px;
+}
+.nearbyCard {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,.05);
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 12px;
+  color: white;
+}
+.nearbyName { font-weight: 700; font-size: 12px; }
+.nearbyDist { font-size: 10px; color: rgba(255,255,255,.5); margin-top: 2px; }
+.navBtn {
+  margin-left: auto;
+  background: var(--primary);
+  border: none;
+  color: white;
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.nearbyCard > span { font-size: 18px; flex-shrink: 0; }
+.nearbyCard > div { flex: 1; }
+
+.sosBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(253,114,114,.15);
+  border-top: 1px solid rgba(253,114,114,.3);
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.sosBtn {
+  margin-left: auto;
+  background: var(--accent);
+  border: none;
+  color: white;
+  padding: 5px 14px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  animation: pulse-glow 2s infinite;
+}
+
+/* Floating notification cards */
+.floatCard {
+  position: absolute;
+  background: white;
+  border-radius: 14px;
+  padding: 12px 16px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text);
+  min-width: 200px;
+  animation: float 5s ease-in-out infinite;
+}
+.floatCard > span { font-size: 20px; }
+.fcTitle { font-weight: 700; font-size: 13px; }
+.fcSub { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+.fc1 { bottom: 80px; left: -60px; animation-delay: -1s; }
+.fc2 { top: 60px; right: -50px; animation-delay: -2.5s; }
+.fc3 { bottom: 160px; right: -70px; animation-delay: -0.8s; }
+
+@media (max-width: 1024px) {
+  .hero > .container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .visual { display: none; }
+  .heading { font-size: clamp(32px, 7vw, 52px); }
+}
+@media (max-width: 768px) {
+  .hero { padding: 60px 0 48px; }
+  .heading { font-size: 36px; }
+  .desc { font-size: 15px; }
+  .quickLinks { gap: 8px; }
+  .quickBtn { padding: 8px 14px; font-size: 12px; }
+}

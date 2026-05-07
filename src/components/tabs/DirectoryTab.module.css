@@ -1,0 +1,85 @@
+/* Shared layout used by PharmacyTab and LabTab */
+.page { background:#f8fafc; min-height:100vh; font-family:'Plus Jakarta Sans','Inter',sans-serif; }
+
+/* ── Top bar ─────────────────────────────────────────────────────────────── */
+.topBar { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 28px; background:white; border-bottom:1px solid #e2e8f0; flex-wrap:wrap; }
+.topBarLeft  { display:flex; align-items:center; gap:12px; }
+.topBarRight { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.pageTitle   { font-size:20px; font-weight:800; color:#0f172a; margin:0; }
+.pageCount   { font-size:12px; font-weight:600; color:#64748b; background:#f1f5f9; padding:3px 10px; border-radius:20px; }
+
+.searchBox { display:flex; align-items:center; gap:8px; background:#f8fafc; border:1.5px solid #e2e8f0; border-radius:10px; padding:9px 14px; width:260px; color:#64748b; transition:border-color .2s; }
+.searchBox:focus-within { border-color:var(--accent,#0a6ebd); }
+.searchBox input { border:none; background:transparent; outline:none; font-size:13.5px; color:#1e293b; width:100%; font-family:inherit; }
+.searchBox input::placeholder { color:#94a3b8; }
+
+.filterBtn { display:flex; align-items:center; gap:7px; padding:9px 16px; border:1.5px solid #e2e8f0; border-radius:10px; background:white; font-size:13.5px; font-weight:600; color:#374151; cursor:pointer; transition:border-color .2s,color .2s; }
+.filterBtn:hover { border-color:var(--accent,#0a6ebd); color:var(--accent,#0a6ebd); }
+.filterCount { background:var(--accent,#0a6ebd); color:white; font-size:11px; font-weight:700; width:18px; height:18px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+
+/* ── Layout ──────────────────────────────────────────────────────────────── */
+.layout { display:flex; position:relative; }
+
+/* ── Filter Panel ────────────────────────────────────────────────────────── */
+.filterOverlay { position:fixed; inset:0; background:rgba(0,0,0,.35); z-index:49; }
+.filterPanel { width:250px; flex-shrink:0; background:white; border-right:1px solid #e2e8f0; display:flex; flex-direction:column; position:sticky; top:68px; height:calc(100vh - 68px); overflow-y:auto; }
+.filterHeader { display:flex; align-items:center; justify-content:space-between; padding:18px 20px 14px; font-size:14px; font-weight:700; color:#0f172a; border-bottom:1px solid #f1f5f9; }
+.filterClose  { background:none; border:none; color:#94a3b8; cursor:pointer; font-size:14px; padding:4px; border-radius:6px; }
+.filterClose:hover { background:#f1f5f9; color:#374151; }
+.filterBody { flex:1; padding:8px 0; overflow-y:auto; }
+.filterGroup { padding:14px 20px; border-bottom:1px solid #f8fafc; }
+.filterGroupTitle { font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.6px; color:#64748b; margin-bottom:10px; }
+.filterOptions { display:flex; flex-direction:column; gap:7px; max-height:160px; overflow-y:auto; }
+.filterOption { display:flex; align-items:center; gap:8px; font-size:13px; color:#374151; cursor:pointer; }
+.filterOption input[type="checkbox"] { accent-color:var(--accent,#0a6ebd); width:15px; height:15px; cursor:pointer; }
+.filterClear { margin:12px 16px; width:calc(100% - 32px); padding:10px; border:1.5px solid #e2e8f0; border-radius:10px; background:white; color:#64748b; font-size:13px; font-weight:600; cursor:pointer; transition:all .2s; }
+.filterClear:hover { border-color:#ef4444; color:#ef4444; background:#fef2f2; }
+
+/* ── Cards grid ──────────────────────────────────────────────────────────── */
+.grid { flex:1; display:grid; grid-template-columns:repeat(auto-fill,minmax(295px,1fr)); gap:20px; padding:24px; align-content:start; }
+
+/* ── Card ────────────────────────────────────────────────────────────────── */
+.card { background:white; border-radius:16px; border:1px solid #e8f0f7; box-shadow:0 2px 12px rgba(0,0,0,.05); overflow:hidden; display:flex; flex-direction:column; transition:transform .22s,box-shadow .22s; }
+.card:hover { transform:translateY(-4px); box-shadow:0 12px 36px rgba(0,0,0,.1); }
+
+.cardImg { position:relative; height:160px; background:linear-gradient(135deg,#f0f9ff,#e8fdf8); overflow:hidden; flex-shrink:0; }
+.cardImg img { width:100%; height:100%; object-fit:cover; display:block; }
+.cardImgPlaceholder { width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:52px; }
+.cardImgBadge { position:absolute; top:10px; left:10px; display:flex; gap:6px; flex-wrap:wrap; }
+.badge { padding:3px 9px; border-radius:20px; font-size:11px; font-weight:700; backdrop-filter:blur(4px); }
+
+.cardBody { padding:16px 18px 18px; display:flex; flex-direction:column; gap:8px; flex:1; }
+.cardName { font-size:15.5px; font-weight:800; color:#0f172a; margin:0; line-height:1.3; }
+.cardLocation { display:flex; align-items:flex-start; gap:5px; font-size:12.5px; color:#64748b; margin:0; line-height:1.4; }
+.cardLocation svg { flex-shrink:0; margin-top:2px; color:var(--accent,#0a6ebd); }
+
+.infoRows { display:flex; flex-direction:column; flex:1; }
+.infoRow { display:flex; align-items:baseline; gap:8px; padding:8px 0; border-bottom:1px solid #f8fafc; }
+.infoRow:last-child { border-bottom:none; }
+.infoLabel { font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:#94a3b8; flex-shrink:0; width:100px; }
+.infoValue { font-size:12.5px; font-weight:600; color:#1e293b; overflow:hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
+
+.websiteLink { display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:600; color:var(--accent,#0a6ebd); text-decoration:none; padding:5px 10px; background:#f0f9ff; border-radius:8px; border:1px solid #bfdbfe; transition:background .2s; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:100%; margin-top:4px; }
+.websiteLink:hover { background:#dbeafe; }
+.mapLink { display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:600; color:#16a34a; text-decoration:none; padding:5px 10px; background:#f0fdf4; border-radius:8px; border:1px solid #bbf7d0; transition:background .2s; white-space:nowrap; }
+.mapLink:hover { background:#dcfce7; }
+.linkRow { display:flex; flex-wrap:wrap; gap:6px; }
+
+/* ── Loading / Empty ─────────────────────────────────────────────────────── */
+.loadingWrap { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:300px; gap:16px; color:#64748b; font-size:15px; }
+.loadingSpinner { width:36px; height:36px; border:3px solid #e2e8f0; border-top-color:var(--accent,#0a6ebd); border-radius:50%; animation:spin .8s linear infinite; }
+@keyframes spin { to { transform:rotate(360deg); } }
+.empty { grid-column:1/-1; display:flex; flex-direction:column; align-items:center; gap:12px; padding:80px 24px; color:#64748b; font-size:15px; }
+.empty span { font-size:40px; }
+.empty button { padding:8px 20px; border:1.5px solid var(--accent,#0a6ebd); border-radius:8px; background:transparent; color:var(--accent,#0a6ebd); font-size:13px; font-weight:600; cursor:pointer; }
+
+@media (max-width:900px) {
+  .filterPanel { position:fixed; left:-270px; top:0; height:100vh; z-index:50; transition:left .3s ease; box-shadow:4px 0 24px rgba(0,0,0,.12); }
+  .filterPanelOpen { left:0; }
+  .grid { padding:16px; gap:14px; }
+}
+@media (max-width:600px) {
+  .topBar { padding:14px 16px; }
+  .searchBox { width:100%; }
+  .grid { grid-template-columns:1fr; }
+}
