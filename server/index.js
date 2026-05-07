@@ -39,17 +39,7 @@ app.use('/api/hero-images', heroImagesRouter);
 app.use('/api/settings', settingsRouter);
 app.use('/api/team', teamRouter);
 
-// app.use('/api/stats',        statsRouter)
-// app.use('/api/campaigns',    campaignsRouter)
-// app.use('/api/testimonials', testimonialsRouter)
-// app.use('/api/doctors',      doctorsRouter)
-// app.use('/api/hospitals',    hospitalsRouter)
-// app.use('/api/pharmacies',   pharmaciesRouter)
-// app.use('/api/labs',         labsRouter)
-// app.use('/api/contact',      contactRouter)
-// app.use('/api/hero-images',  heroImagesRouter)
-// app.use('/api/settings',    settingsRouter)
-// app.use('/api/team',        teamRouter)
+
 app.get('/api/health', (_, res) => res.json({ ok: true }))
 // React fallback for refresh/deep links
 app.get('/{*path}', (req, res, next) => {
